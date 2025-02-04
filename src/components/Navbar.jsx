@@ -47,10 +47,10 @@ export default function Navbar(){
           <div className="flex-1">
             <Link to="/" onClick={(e)=>{
                if(!user) e.preventDefault();
-            }} className="btn btn-ghost md:text-xl  text-base-300">🧑‍💻 DevConnect</Link >
+            }} className="btn btn-ghost md:text-base sm:text-sm text-base-300">🧑‍💻 DevConnect</Link >
           </div>
           { user!=null && (<div className="flex-none gap-2">
-           <div><p className=" md:text-lg text-base-300">Welcome, {user.firstName}</p></div>
+           <div><p className=" md:text-base sm:text-sm text-base-300">Welcome, {user.firstName}</p></div>
             <div className="dropdown dropdown-end mx-5">
               <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                  

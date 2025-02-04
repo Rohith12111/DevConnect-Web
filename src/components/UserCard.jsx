@@ -22,7 +22,7 @@ function UserCard({user}) {
   }
    
   return (
-    <div className="card bg-base-100 w-96 max-w-sm md:max-w-md lg:max-w-lg shadow-2xl ring-2">
+    <div className="card bg-base-100 w-96 max-w-xs md:max-w-md lg:max-w-lg shadow-2xl ring-2">
         <figure className="h-96">
           <img className="object-cover md:object-fill"
             src={user?.photoUrl}

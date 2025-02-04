@@ -43,12 +43,12 @@ const Login = () => {
           <form className="space-y-4" onSubmit={handleFormSubmit}>
             <div className="form-control w-full">
                 <label className="block mb-2 font-bold">Username</label>
-                <input type="text" placeholder="Email" value={userName} onChange={(e)=>setUserName(e.target.value)} className="input input-bordered w-full focus:ring-black focus:ring-2" />
+                <input type="text" placeholder="Email" value={userName} onChange={(e)=>setUserName(e.target.value)} className="input input-bordered  w-full" />
               </div>
               
               <div className="form-control w-full">
                 <label className="block mb-2 font-bold">Password</label>
-                <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} className="input input-bordered w-full focus:ring-black focus:ring-2" />
+                <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} className="input input-bordered w-full" />
               </div>
 
               { !isValidCredentials && 
@@ -61,7 +61,7 @@ const Login = () => {
               }
             <div className="card-actions flex-col items-center justify-center">
               <button type="submit" className="btn btn-primary">Login</button>
-              <Link to="/signup" className="label-text cursor-pointer font-semibold link link-primary" >New User? SignUp Here</Link>
+              <Link to="/signup" className="label-text text-xs cursor-pointer font-semibold link link-primary" >New User? SignUp Here</Link>
             </div>
           </form>
           

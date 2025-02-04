@@ -68,7 +68,7 @@ const SignUp = () => {
 
 
     return (
-    <div className="flex justify-center py-40">
+    <div className="flex justify-center my-20">
       <div className="card bg-base-100 shadow-xl lg:w-1/5 min-w-full md:min-w-80 sm:min-w-80  ring-2">
         <div className="card-body">
           <h1 className="card-title font-bold uppercase mb-5">SignUp</h1>
@@ -76,24 +76,24 @@ const SignUp = () => {
           <form className="space-y-4" onSubmit={handleFormSubmit}>
             <div className="form-control w-full">
                 <label className="block mb-2 font-bold">First Name</label>
-                <input type="text" value={firstName} onChange={(e)=>setFirstName(e.target.value)} className="input input-bordered w-full focus:ring-black focus:ring-2" />
+                <input type="text" value={firstName} onChange={(e)=>setFirstName(e.target.value)} className="input input-bordered w-full" />
                 {errors?.firstName && <label className="label-text-alt text-error">{errors.firstName}</label>}
               </div>
 
               <div className="form-control w-full">
                 <label className="block mb-2 font-bold">Last Name</label>
-                <input type="text" value={lastName} onChange={(e)=>setLastName(e.target.value)} className="input input-bordered w-full focus:ring-black focus:ring-2" />
+                <input type="text" value={lastName} onChange={(e)=>setLastName(e.target.value)} className="input input-bordered w-full" />
               </div>
 
             <div className="form-control w-full">
                 <label className="block mb-2 font-bold">Email</label>
-                <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} className="input input-bordered w-full focus:ring-black focus:ring-2" />
+                <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} className="input input-bordered w-full" />
                 {errors?.email && <label className="label-text-alt text-error">{errors.email}</label>}
               </div>
               
               <div className="form-control w-full">
                 <label className="block mb-2 font-bold">Password</label>
-                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} className="input input-bordered w-full focus:ring-black focus:ring-2" />
+                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} className="input input-bordered w-full" />
                 {errors?.password && <label className="label-text-alt text-error">{errors.password}</label>}
               </div>
 

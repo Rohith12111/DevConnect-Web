@@ -15,7 +15,7 @@ const Profile = () => {
 
   return (
     <div className="flex justify-center my-20">
-      <div className="card bg-base-100 shadow-xl ring-2 w-full max-w-sm md:max-w-md lg:max-w-lg">
+      <div className="card bg-base-100 w-96 max-w-xs md:max-w-md lg:max-w-lg shadow-2xl ring-2"> 
       <div className="card-body">
       <figure className="h-96">
           <img className="object-cover md:object-fill"

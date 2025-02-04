@@ -120,63 +120,63 @@ const EditProfile = () => {
         </div>}
         
 
-        <div className="card bg-base-100 w-full max-w-sm md:max-w-md lg:max-w-lg shadow-xl my-20 ring-4">
+        <div className="card bg-base-100 w-96 max-w-xs md:max-w-md lg:max-w-lg shadow-2xl ring-2 mt-5">
             <div className="card-body">
-                <h2 className="card-title md:text-xl font-bold">Edit Profile</h2>
+                <h2 className="card-title text-lg font-bold">Edit Profile</h2>
                 <form action="">
-                    <div className="form-control mb-1 mt-2">
+                    <div className="form-control mt-2">
                         <label htmlFor="" className="label">
-                            <span className="label-text md:text-lg font-bold">First Name</span>
+                            <span className="label-text text-sm font-bold">First Name</span>
                         </label>
-                        <input type="text" className="input input-bordered input-md  focus:ring-black focus:ring-2" onChange={(e)=>setFirstName(e.target.value)} value={firstName}/>
+                        <input type="text" className="input input-bordered input-sm" onChange={(e)=>setFirstName(e.target.value)} value={firstName}/>
                         {errors?.firstName && <label className="label-text-alt text-error py-1">{errors.firstName}</label>}
                     </div>
-                    <div className="form-control mb-1">
+                    <div className="form-control">
                         <label htmlFor="" className="label">
-                            <span className="label-text font-bold md:text-lg">Last Name</span>
+                            <span className="label-text font-bold text-sm">Last Name</span>
                         </label>
-                        <input type="text" className="input input-bordered input-md focus:ring-black focus:ring-2" onChange={(e)=>setLastName(e.target.value)} value={lastName} />
+                        <input type="text" className="input input-bordered input-sm" onChange={(e)=>setLastName(e.target.value)} value={lastName} />
                         {errors?.lastName && <label className="label-text-alt py-1 text-error">{errors.lastName}</label>}
                     </div>
-                    <div className="form-control mb-1">
+                    <div className="form-control ">
                         <label htmlFor="" className="label">
-                            <span className="label-text font-bold md:text-lg">Age</span>
+                            <span className="label-text font-bold text-sm">Age</span>
                         </label>
-                        <input type="number" className="input input-bordered input-md focus:ring-black focus:ring-2" onChange={(e)=>setAge(e.target.value)} value={age}/>
+                        <input type="number" className="input input-bordered input-sm" onChange={(e)=>setAge(e.target.value)} value={age}/>
                         {errors?.age && <label className="label-text-alt py-1 text-error">{errors.age}</label>}
                     </div>
-                    <div className="form-control mb-1">
+                    <div className="form-control ">
                         <label htmlFor="" className="label">
-                            <span className="label-text font-bold md:text-lg">Gender</span>
+                            <span className="label-text font-bold text-sm">Gender</span>
                         </label>
-                        <select  className="select select-bordered w-full focus:ring-black focus:ring-2"  value={gender}onChange={(e) => setGender(e.target.value)}>
+                        <select  className="select select-bordered w-full select-sm"  value={gender}onChange={(e) => setGender(e.target.value)}>
                             <option disabled value="">Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="others">Others</option>
                         </select>
                     </div>
-                    <div className="form-control mb-1">
+                    <div className="form-control">
                         <label htmlFor="" className="label">
-                            <span className="label-text font-bold md:text-lg">PhotoUrl</span>
+                            <span className="label-text font-bold text-sm">PhotoUrl</span>
                         </label>
-                        <input type="url" className="input input-bordered input-md focus:ring-black focus:ring-2" onChange={(e)=>setPhotoUrl(e.target.value)} value={photoUrl}/>
+                        <input type="url" className="input input-bordered input-sm" onChange={(e)=>setPhotoUrl(e.target.value)} value={photoUrl}/>
                         {errors?.photoUrl && <label className="label-text-alt py-1 text-error">{errors.photoUrl}</label>}
                     </div>
-                    <div className="form-control mb-1">
+                    <div className="form-control">
                         <label htmlFor="" className="label">
-                            <span className="label-text font-bold md:text-lg">About</span>
+                            <span className="label-text font-bold text-sm">About</span>
                         </label>
-                        <textarea type="text" className="textarea textarea-md textarea-bordered focus:ring-black focus:ring-2" onChange={(e)=>setAbout(e.target.value)} value={about}/>
+                        <textarea type="text" className="textarea textarea-md textarea-bordered overflow-hidden" onChange={(e)=>setAbout(e.target.value)} value={about}/>
                     </div>
                    
-                    <div className="form-control mb-1">
+                    <div className="form-control">
                         <label htmlFor="" className="label">
-                            <span className="label-text font-bold md:text-lg">Skills</span>
+                            <span className="label-text font-bold text-sm">Skills</span>
                         </label>
                         <div>
-                            <input type="text" className="input input-bordered input-sm focus:ring-black focus:ring-2 mb-4" onChange={(e)=>setSkill(e.target.value)} value={skill}/>
-                            <button type="button" className="btn btn-xs btn-outline ml-3" onClick={addSkill}>Add  
+                            <input type="text" className="input input-bordered input-sm mb-4" onChange={(e)=>setSkill(e.target.value)} value={skill}/>
+                            <button type="button" className="btn btn-xs btn-outline sm:ml-3" onClick={addSkill}>Add  
                                 <span> <Plus className="w-6 h-4"/></span>
                             </button>
                         </div>
@@ -191,7 +191,7 @@ const EditProfile = () => {
                     </div>
                 
                 </form>
-                <div className="card-actions justify-end mt-4">
+                <div className="card-actions justify-end ">
                     <button className="btn btn-sm btn-error" onClick={handleCancel}>Cancel</button>
                     <button className="btn btn-sm btn-info" onClick={() => modalRef.current?.showModal()}>Preview</button>
                     <button className="btn btn-sm btn-primary" onClick={handleSave}>Save</button>
@@ -199,13 +199,13 @@ const EditProfile = () => {
             </div>
         </div>   
         <dialog ref={modalRef} className="modal">
-       <div className="modal-box flex flex-col justify-center">
+       <div className="modal-box w-72 sm:w-80 md:w-96 flex flex-col justify-center items-center shadow-2xl">
          <UserPreview user={{firstName,lastName,age,gender,photoUrl,skills,about}} />
          <div className="modal-action">
            <button className="btn btn-outline btn-sm hover:btn-error" onClick={() => modalRef.current?.close()}>Close</button>
          </div>
        </div>
-       <form method="dialog" className="modal-backdrop">
+       <form method="dialog" className="modal-backdrop backdrop-blur-sm">
          <button>close</button>
        </form>
      </dialog>     

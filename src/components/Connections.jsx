@@ -72,10 +72,10 @@ const Connections = () => {
      
         return ( connections &&
           <div className="p-4">
-            <h2 className="text-2xl font-extrabold flex justify-center mb-10">Connections</h2>
+            <h2 className="text-xl font-extrabold flex justify-center mb-10">Connections</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {connections.map(connection => (
-                <div key={connection._id} className="card bg-base-100 shadow-xl hover:shadow-2xl hover:shadow-primary-content transition-shadow ring-2">
+                <div key={connection._id} className="card w-96 max-w-xs md:max-w-md lg:max-w-lg bg-base-100 shadow-xl hover:shadow-2xl hover:shadow-primary-content transition-shadow ring-2">
                   <figure className="h-48 mt-5">
                     <img 
                       src={connection.photoUrl} 

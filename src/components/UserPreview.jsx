@@ -1,10 +1,9 @@
-import React from 'react'
-
 const UserPreview = ({user}) => {
   return (
-    <div className="card bg-base-100 w-full lg:min-w-full shadow-2xl sm:min-w-full ring-2">
-        <figure className="h-96">
-          <img className="object-cover md:object-fill"
+    
+    <div className="card bg-base-100 w-full shadow-2xl ring-4">
+        <figure className="md:h-96 h-72">
+          <img className="object-cover xl:object-fill"
             src={user?.photoUrl}
             alt="Profile Image" />
         </figure>
