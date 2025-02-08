@@ -1,5 +1,4 @@
 import { Pencil } from "lucide-react"
-import { useEffect } from "react"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
@@ -17,8 +16,8 @@ const Profile = () => {
     <div className="flex justify-center my-20">
       <div className="card bg-base-100 w-96 max-w-xs md:max-w-md lg:max-w-lg shadow-2xl ring-2"> 
       <div className="card-body">
-      <figure className="h-96">
-          <img className="object-cover md:object-fill"
+      <figure className="h-48 mt-5">
+          <img className="object-cover h-full rounded-full"
             src={user?.photoUrl}
             alt="Profile Image" />
         </figure>

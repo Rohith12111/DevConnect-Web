@@ -3,7 +3,7 @@ import { BASE_URL } from "../utils/constants"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { addConnection } from "../store/connectionSlice"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import NoConnections from "../assets/lonely.png"
 
 const Connections = () => {
@@ -71,16 +71,16 @@ const Connections = () => {
          )}
      
         return ( connections &&
-          <div className="p-4">
-            <h2 className="text-xl font-extrabold flex justify-center mb-10">Connections</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="p-4 overflow-hidden">
+            <h2 className="text-xl font-bold flex justify-center mb-10">Connections</h2>
+            <div className="flex flex-wrap justify-evenly gap-8">
               {connections.map(connection => (
-                <div key={connection._id} className="card w-96 max-w-xs md:max-w-md lg:max-w-lg bg-base-100 shadow-xl hover:shadow-2xl hover:shadow-primary-content transition-shadow ring-2">
+                <div key={connection._id} className="card w-96 bg-base-100 shadow-xl hover:shadow-2xl hover:shadow-primary-content transition-shadow ring-2">
                   <figure className="h-48 mt-5">
                     <img 
                       src={connection.photoUrl} 
                       alt="Profile" 
-                      className="object-scale-down h-full rounded-full"
+                      className="object-cover h-full rounded-full"
                       loading="lazy"
                     />
                   </figure>
@@ -88,18 +88,21 @@ const Connections = () => {
                     <h2 className="card-title">{connection.firstName} {connection.lastName}</h2>
                     <p className="text-sm text-gray-600">{connection.about}</p>
                     <div className="flex gap-2 flex-wrap mt-2">
-                      {connection.skills.map(skill => (
-                        <span className="badge badge-outline badge-info uppercase badge-sm font-mono" key={skill}>{skill}</span>
+                      {connection.skills && connection.skills.map(skill => (
+                        <span className="badge badge-outline badge-info uppercase badge-sm font-mono" 
+                              key={`${connection._id}-${skill}`}>
+                          {skill}
+                        </span>
                       ))}
                     </div>
                     <div className="card-actions justify-end mt-4">
-                      <button className="btn btn-sm btn-outline btn-accent">Message</button>
+                      <Link to={`/chat/${connection._id}`}><button className="btn btn-sm btn-outline btn-accent">Message</button></Link>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+            </div>
         );
 }
 

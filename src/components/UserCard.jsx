@@ -16,6 +16,7 @@ function UserCard({user}) {
         if(status==="interested") dispatch(swipeInterest(id))
         else dispatch(swipeIgnore(id))
       } catch (error) {
+        console.log(error)
         navigate("/error")
       }
 
@@ -23,8 +24,8 @@ function UserCard({user}) {
    
   return (
     <div className="card bg-base-100 w-96 max-w-xs md:max-w-md lg:max-w-lg shadow-2xl ring-2">
-        <figure className="h-96">
-          <img className="object-cover md:object-fill"
+        <figure className="h-48 mt-5">
+          <img className="object-cover h-full rounded-full"
             src={user?.photoUrl}
             alt="Profile Image" />
         </figure>

@@ -38,7 +38,7 @@ const Feed= ()=> {
 
   if(!feedData ||!Array.isArray(feedData) || feedData.length==0) 
   return (
-    <div className="flex justify-center my-52"> 
+    <div className="flex justify-center my-40"> 
       <div className="card card-compact bg-base-100 shadow-2xl ring-2 w-full max-w-sm md:max-w-md lg:max-w-lg">
           <figure>
             <img

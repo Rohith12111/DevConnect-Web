@@ -11,6 +11,7 @@ import Connections from "./components/Connections";
 import ConnectionsRequest from "./components/ConnectionsRequest";
 import SignUp from "./components/SignUp";
 import Error from "./components/Error";
+import Chat from "./components/Chat";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
                   <Route path="/connections" element={<Connections/>}/>
                   <Route path="/requests" element={<ConnectionsRequest/>}/>
                   <Route path="/signup" element={<SignUp/>}/>
+                  <Route path="/chat/:targetUserId" element={<Chat/>}/>
                 </Route>
               </Routes>
            

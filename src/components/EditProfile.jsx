@@ -18,14 +18,14 @@ const EditProfile = () => {
   const dispatch=useDispatch()
   const navigate=useNavigate()
 
-  const [firstName,setFirstName]=useState(user?.firstName)
-  const [lastName,setLastName]=useState(user?.lastName)
-  const [age,setAge]=useState(user?.age)
-  const [gender,setGender]=useState(user?.gender)
-  const [about,setAbout]=useState(user?.about)
+  const [firstName,setFirstName]=useState(user?.firstName || "")
+  const [lastName,setLastName]=useState(user?.lastName|| "")
+  const [age,setAge]=useState(user?.age|| 18)
+  const [gender,setGender]=useState(user?.gender||"male")
+  const [about,setAbout]=useState(user?.about || "")
   const [skill,setSkill]=useState("")
   const [skills,setSkills]=useState(user?.skills || [])
-  const [photoUrl,setPhotoUrl]=useState(user?.photoUrl)
+  const [photoUrl,setPhotoUrl]=useState(user?.photoUrl|| "")
   const [toast,setToast]=useState(false)
   const [errors,setErrors]=useState({})
   const modalRef = useRef(null);
@@ -102,6 +102,10 @@ const EditProfile = () => {
 
   function addSkill()
   {
+    if(!skill) {
+        setSkill("")
+        return
+    }
     if(skills.length===5){
         setErrors({...errors,skills:"You can only add 5 skills"})
         return
