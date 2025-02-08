@@ -20,8 +20,8 @@ const EditProfile = () => {
 
   const [firstName,setFirstName]=useState(user?.firstName || "")
   const [lastName,setLastName]=useState(user?.lastName|| "")
-  const [age,setAge]=useState(user?.age|| 18)
-  const [gender,setGender]=useState(user?.gender||"male")
+  const [age,setAge]=useState(user?.age)
+  const [gender,setGender]=useState(user?.gender)
   const [about,setAbout]=useState(user?.about || "")
   const [skill,setSkill]=useState("")
   const [skills,setSkills]=useState(user?.skills || [])
