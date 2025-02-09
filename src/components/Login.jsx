@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../store/userSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
+import { House } from "lucide-react";
 
 const Login = () => {
 
@@ -35,6 +36,12 @@ const Login = () => {
   }
 
   return (
+    <>
+    <div className="navbar bg-primary text-base-content">
+          <div className="flex-1">
+            <Link to="/login" className="btn btn-ghost md:text-base sm:text-sm text-base-300 font-bold text-md "> <House className="h-5 w-5"/>  🧑‍💻DevConnect</Link >
+          </div>
+      </div>
     <div className="flex justify-center py-40">
       <div className="card bg-base-100 shadow-xl min-w-full lg:w-1/5 md:min-w-96 sm:min-w-80 ring-2 ">
         <div className="card-body">
@@ -69,6 +76,7 @@ const Login = () => {
       </div>
       
     </div>
+    </>
   );
 }
 

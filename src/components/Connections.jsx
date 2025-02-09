@@ -71,8 +71,8 @@ const Connections = () => {
          )}
      
         return ( connections &&
-          <div className="p-4 overflow-hidden">
-            <h2 className="text-xl font-bold flex justify-center mb-10">Connections</h2>
+          <div className="p-4">
+            <h2 className="text-xl font-bold flex justify-center mb-10 mt-2">Connections</h2>
             <div className="flex flex-wrap justify-evenly gap-8">
               {connections.map(connection => (
                 <div key={connection._id} className="card w-96 bg-base-100 shadow-xl hover:shadow-2xl hover:shadow-primary-content transition-shadow ring-2">
@@ -80,12 +80,13 @@ const Connections = () => {
                     <img 
                       src={connection.photoUrl} 
                       alt="Profile" 
-                      className="object-cover h-full rounded-full"
+                      className="object-cover h-full rounded-full max-w-xs"
                       loading="lazy"
                     />
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{connection.firstName} {connection.lastName}</h2>
+                    <p className="font-medium">{connection?.age} {connection?.gender} </p>
                     <p className="text-sm text-gray-600">{connection.about}</p>
                     <div className="flex gap-2 flex-wrap mt-2">
                       {connection.skills && connection.skills.map(skill => (

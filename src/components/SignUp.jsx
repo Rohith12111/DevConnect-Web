@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addUser } from "../store/userSlice";
 import validator from 'validator'
+import { House } from "lucide-react";
 
 const SignUp = () => {
   
@@ -68,8 +69,15 @@ const SignUp = () => {
 
 
     return (
+      <> 
+      <div className="navbar bg-primary text-base-content">
+      <div className="flex-1">
+            <Link to="/login" className="btn btn-ghost md:text-base sm:text-sm text-base-300 font-bold text-md "> <House className="h-5 w-5"/>  🧑‍💻DevConnect</Link >
+          </div>
+      </div>
     <div className="flex justify-center my-20">
-      <div className="card bg-base-100 shadow-xl lg:w-1/5 min-w-full md:min-w-80 sm:min-w-80  ring-2">
+
+      <div className="card bg-base-100 shadow-xl w-96 max-w-xs md:max-w-md lg:max-w-lg  ring-2 px-5">
         <div className="card-body">
           <h1 className="card-title font-bold uppercase mb-5">SignUp</h1>
 
@@ -98,8 +106,8 @@ const SignUp = () => {
               </div>
 
               
-            <div className="card-actions justify-center mt-8">
-              <button type="button" className="btn btn-outline btn-error" onClick={handleCancel}>Cancel</button>
+            <div className="card-actions justify-center mt-10">
+              <button type="button" className="btn btn-error" onClick={handleCancel}>Cancel</button>
               <button type="submit" className="btn btn-primary">SignUp</button>
             </div>
           </form>
@@ -108,6 +116,8 @@ const SignUp = () => {
       </div>
       
     </div>
+    </>
+
   )
 }
 

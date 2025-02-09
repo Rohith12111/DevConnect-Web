@@ -84,7 +84,7 @@ const ConnectionsRequest = () => {
         </div>
       )}
 
-      <div className="card bg-primary-content bg-opacity-10 w-2/5 shadow-xl shadow-primary-content ring-2">
+      <div className="card bg-primary-content bg-opacity-10 w-full max-w-96 md:max-w-lg  shadow-xl shadow-primary-content ring-2">
         <div className="card-body">
           <h2 className="card-title flex justify-center font-bold mb-10">
             Requests
@@ -97,13 +97,13 @@ const ConnectionsRequest = () => {
                   name="my-accordion-1"
                   defaultChecked={index === 0}
                 />
-                <div className="collapse-title text-lg font-extrabold  flex justify-between">
+                <div className="collapse-title text-lg font-bold flex justify-between">
                   <img
-                    src={request.fromUserId.photoUrl}
+                    src={request?.fromUserId?.photoUrl}
                     className="img h-20 w-20 rounded-full"
                     alt=""
                   />
-                  <span className="my-5">
+                  <span className="my-5 px-4">
                     {request.fromUserId.firstName} {request.fromUserId.lastName}
                   </span>
                   <span className="my-5 font-medium mb-1">
@@ -115,7 +115,7 @@ const ConnectionsRequest = () => {
                     <p className="font-medium mb-2">
                       {request.fromUserId.about}
                     </p>
-                    <span className="flex justify-between gap-2">
+                    <span className="flex justify-between gap-2 flex-wrap">
                       {request.fromUserId.skills.map((skill, id) => (
                         <span
                           key={id}
@@ -126,7 +126,7 @@ const ConnectionsRequest = () => {
                       ))}
                     </span>
                   </div>
-                  <div className="flex justify-end my-5">
+                  <div className="flex justify-end mt-5">
                     <button
                       className="btn btn-sm btn-error btn-outline mx-2"
                       onClick={() => handleDeny(request._id)}

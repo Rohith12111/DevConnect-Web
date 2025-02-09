@@ -2,8 +2,8 @@ const UserPreview = ({user}) => {
   return (
     
     <div className="card bg-base-100 w-full shadow-2xl ring-4">
-        <figure className="md:h-96 h-72">
-          <img className="object-cover xl:object-fill"
+        <figure className="md:h-96 h-60">
+          <img className="object-cover h-full rounded-full max-w-xs"
             src={user?.photoUrl}
             alt="Profile Image" />
         </figure>

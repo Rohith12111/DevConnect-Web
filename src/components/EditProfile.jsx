@@ -21,7 +21,7 @@ const EditProfile = () => {
   const [firstName,setFirstName]=useState(user?.firstName || "")
   const [lastName,setLastName]=useState(user?.lastName|| "")
   const [age,setAge]=useState(user?.age)
-  const [gender,setGender]=useState(user?.gender)
+  const [gender,setGender]=useState(user?.gender || "")
   const [about,setAbout]=useState(user?.about || "")
   const [skill,setSkill]=useState("")
   const [skills,setSkills]=useState(user?.skills || [])
@@ -124,7 +124,7 @@ const EditProfile = () => {
         </div>}
         
 
-        <div className="card bg-base-100 w-96 max-w-xs md:max-w-md lg:max-w-lg shadow-2xl ring-2 mt-5">
+        <div className="card bg-base-100 w-full max-w-sm md:max-w-md lg:max-w-lg shadow-2xl ring-2 mt-5">
             <div className="card-body">
                 <h2 className="card-title text-lg font-bold">Edit Profile</h2>
                 <form action="">
@@ -153,7 +153,7 @@ const EditProfile = () => {
                         <label htmlFor="" className="label">
                             <span className="label-text font-bold text-sm">Gender</span>
                         </label>
-                        <select  className="select select-bordered w-full select-sm"  value={gender}onChange={(e) => setGender(e.target.value)}>
+                        <select  className="select select-bordered w-full select-sm"  value={gender} onChange={(e) => setGender(e.target.value)}>
                             <option disabled value="">Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -195,7 +195,7 @@ const EditProfile = () => {
                     </div>
                 
                 </form>
-                <div className="card-actions justify-end ">
+                <div className="card-actions justify-end">
                     <button className="btn btn-sm btn-error" onClick={handleCancel}>Cancel</button>
                     <button className="btn btn-sm btn-info" onClick={() => modalRef.current?.showModal()}>Preview</button>
                     <button className="btn btn-sm btn-primary" onClick={handleSave}>Save</button>

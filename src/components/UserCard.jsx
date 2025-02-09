@@ -25,7 +25,7 @@ function UserCard({user}) {
   return (
     <div className="card bg-base-100 w-96 max-w-xs md:max-w-md lg:max-w-lg shadow-2xl ring-2">
         <figure className="h-48 mt-5">
-          <img className="object-cover h-full rounded-full"
+          <img className="object-cover h-full rounded-full max-w-xs"
             src={user?.photoUrl}
             alt="Profile Image" />
         </figure>
